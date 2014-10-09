@@ -1,0 +1,1872 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY psys "http://proton.semanticweb.org/protonsys#" >
+    <!ENTITY pext "http://proton.semanticweb.org/protonext#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY General "http://eeyem.eap.gr/ontologies/2011/General.owl#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+    <!ENTITY pli10_ch5_merged2 "http://eeyem.eap.gr/ontologies/pli10_ch5_merged2#" >
+    <!ENTITY swrla "http://swrl.stanford.edu/ontologies/3.3/swrla.owl#" >
+    <!ENTITY LearningObject "http://eeyem.eap.gr/ontologies/2011/LearningObject.owl#" >
+    <!ENTITY LearningOutcome "http://eeyem.eap.gr/ontologies/2011/LearningOutcome.owl#" >
+    <!ENTITY sqwrl "http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#" >
+    <!ENTITY sm "http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#"
+     xml:base="http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl"
+     xmlns:LearningOutcome="http://eeyem.eap.gr/ontologies/2011/LearningOutcome.owl#"
+     xmlns:sm="http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#"
+     xmlns:LearningObject="http://eeyem.eap.gr/ontologies/2011/LearningObject.owl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:sqwrl="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:General="http://eeyem.eap.gr/ontologies/2011/General.owl#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:psys="http://proton.semanticweb.org/protonsys#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:pli10_ch5_merged2="http://eeyem.eap.gr/ontologies/pli10_ch5_merged2#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:pext="http://proton.semanticweb.org/protonext#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#">
+    <owl:Ontology rdf:about="http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl">
+        <owl:versionIRI rdf:resource="http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl"/>
+        <owl:imports rdf:resource="http://sqwrl.stanford.edu/ontologies/built-ins/3.4/sqwrl.owl"/>
+        <owl:imports rdf:resource="http://swrl.stanford.edu/ontologies/3.3/swrla.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_LORec2Course -->
+
+    <owl:ObjectProperty rdf:about="&sm;_LORec2Course">
+        <rdfs:range rdf:resource="&sm;_Course"/>
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_LORec2LO_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_LORec2LO_">
+        <rdfs:range rdf:resource="&LearningOutcome;LearningOutcome"/>
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_LORec2Student_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_LORec2Student_">
+        <rdfs:range rdf:resource="&sm;Student"/>
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_Map2Course -->
+
+    <owl:ObjectProperty rdf:about="&sm;_Map2Course"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_Map2Student -->
+
+    <owl:ObjectProperty rdf:about="&sm;_Map2Student"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_attending_course -->
+
+    <owl:ObjectProperty rdf:about="&sm;_attending_course">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:range rdf:resource="&sm;_Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_record2LORec_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_record2LORec_">
+        <rdfs:range rdf:resource="&sm;_LORecord"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_record2Lobj_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_record2Lobj_">
+        <rdfs:range rdf:resource="&LearningObject;LearningObject"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_record2course_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_record2course_">
+        <rdfs:range rdf:resource="&sm;_Course"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_record2student_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_record2student_">
+        <rdfs:range rdf:resource="&sm;Student"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_student2record_ -->
+
+    <owl:ObjectProperty rdf:about="&sm;_student2record_">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:range rdf:resource="&sm;_LearningTrack"/>
+        <owl:inverseOf rdf:resource="&sm;_record2student_"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_temp_goals -->
+
+    <owl:ObjectProperty rdf:about="&sm;_temp_goals">
+        <rdfs:domain rdf:resource="&sm;_Course"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#basedOn -->
+
+    <owl:ObjectProperty rdf:about="&sm;basedOn">
+        <rdfs:domain rdf:resource="&sm;LearningStyle"/>
+        <rdfs:range rdf:resource="&sm;MediaPresentation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasCurrentActivity -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasCurrentActivity">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasDemographics -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasDemographics">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&sm;DemographicData"/>
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasPersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasDisabilities -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasDisabilities">
+        <rdfs:range rdf:resource="&sm;Disabilities"/>
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasPersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasExperience -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasExperience">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasCurrentActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasInteractionPreferences -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasInteractionPreferences">
+        <rdfs:range rdf:resource="&sm;InteractionPreferences"/>
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasPersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasLearningStyle -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasLearningStyle">
+        <rdfs:range rdf:resource="&sm;LearningStyle"/>
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasPersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasLiteracy -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasLiteracy">
+        <rdfs:range rdf:resource="&sm;AcademicLiteracy"/>
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasMotivation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasMotivation -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasMotivation">
+        <rdfs:range rdf:resource="&sm;MotivationState"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasPersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasPersonalInformation -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasPersonalInformation">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:range rdf:resource="&sm;StudentPersonalInformation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasReasons -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasReasons">
+        <rdfs:range rdf:resource="&sm;ReasonsForEducation"/>
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasMotivation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#hasTime -->
+
+    <owl:ObjectProperty rdf:about="&sm;hasTime">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+        <rdfs:range rdf:resource="&sm;TimeStudy"/>
+        <rdfs:subPropertyOf rdf:resource="&sm;hasMotivation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#onActivity -->
+
+    <owl:ObjectProperty rdf:about="&sm;onActivity">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&sm;InteractionPreferences"/>
+                    <rdf:Description rdf:about="&sm;LearningStyle"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#onModule -->
+
+    <owl:ObjectProperty rdf:about="&sm;onModule"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#ID -->
+
+    <owl:DatatypeProperty rdf:about="&sm;ID">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LOR_date -->
+
+    <owl:DatatypeProperty rdf:about="&sm;LOR_date">
+        <rdfs:subPropertyOf rdf:resource="&sm;LORec_data"/>
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LOR_status -->
+
+    <owl:DatatypeProperty rdf:about="&sm;LOR_status">
+        <rdfs:subPropertyOf rdf:resource="&sm;LORec_data"/>
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LOR_value -->
+
+    <owl:DatatypeProperty rdf:about="&sm;LOR_value">
+        <rdfs:comment>isws na einai string me sugkekrimeeni suntaxi px
+[metric]&amp;&amp;[value]</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&sm;LORec_data"/>
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LORec_data -->
+
+    <owl:DatatypeProperty rdf:about="&sm;LORec_data">
+        <rdfs:domain rdf:resource="&sm;_LORecord"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_data -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_data"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_date -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_date">
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_data"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_eval_difficulty -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_eval_difficulty">
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_evaluation"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_eval_helpfull -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_eval_helpfull">
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_evaluation"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_eval_usage -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_eval_usage">
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_evaluation"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_evaluation -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_evaluation">
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_data"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_lo_id -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_lo_id">
+        <rdfs:comment>isws na ginontan object prop sto mellon?</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_data"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_status -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_status">
+        <rdfs:comment>string xyzwqv....
+y = is pinned
+z = is evaluated
+w = is parsed 
+q= is ......
+...</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_data"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#REC_time_spent -->
+
+    <owl:DatatypeProperty rdf:about="&sm;REC_time_spent">
+        <rdfs:subPropertyOf rdf:resource="&sm;REC_data"/>
+        <rdfs:domain rdf:resource="&sm;_LearningTrack"/>
+        <rdfs:range rdf:resource="&xsd;long"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_MAP_LOS_count -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_MAP_LOS_count">
+        <rdfs:subPropertyOf rdf:resource="&sm;_Map_data"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_MAP_LOS_fin -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_MAP_LOS_fin">
+        <rdfs:subPropertyOf rdf:resource="&sm;_Map_data"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_MAP_goals_count -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_MAP_goals_count">
+        <rdfs:subPropertyOf rdf:resource="&sm;_Map_data"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_MAP_goals_fin -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_MAP_goals_fin">
+        <rdfs:subPropertyOf rdf:resource="&sm;_Map_data"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_Map_data -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_Map_data"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_courseID -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_courseID">
+        <rdfs:domain rdf:resource="&sm;_Course"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_course_title -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_course_title"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_has_temp_goals -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_has_temp_goals">
+        <rdfs:domain rdf:resource="&sm;_Course"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_mod_UID -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_mod_UID">
+        <rdfs:domain rdf:resource="&sm;Student"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_mod_userKey -->
+
+    <owl:DatatypeProperty rdf:about="&sm;_mod_userKey"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#academic_literacy -->
+
+    <owl:DatatypeProperty rdf:about="&sm;academic_literacy">
+        <rdfs:domain rdf:resource="&sm;AcademicLiteracy"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">excellent</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">good</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">poor</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#acquired -->
+
+    <owl:DatatypeProperty rdf:about="&sm;acquired">
+        <rdfs:domain rdf:resource="&LearningOutcome;LearningOutcome"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#age -->
+
+    <owl:DatatypeProperty rdf:about="&sm;age">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#civil_state -->
+
+    <owl:DatatypeProperty rdf:about="&sm;civil_state">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">divorced</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">married</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">single</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#color -->
+
+    <owl:DatatypeProperty rdf:about="&sm;color">
+        <rdfs:domain rdf:resource="&sm;Color"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#computer_literacy -->
+
+    <owl:DatatypeProperty rdf:about="&sm;computer_literacy">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>advanced</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>beginner</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>novice</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#degree_of_mastery -->
+
+    <owl:DatatypeProperty rdf:about="&sm;degree_of_mastery">
+        <rdfs:domain rdf:resource="&LearningObject;LearningObject"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">excellent</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">fair</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">good</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">poor</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first rdf:datatype="&xsd;string">very good</rdf:first>
+                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#educational_level -->
+
+    <owl:DatatypeProperty rdf:about="&sm;educational_level">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>bachelor</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>master</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>phd</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first>secondary</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#email -->
+
+    <owl:DatatypeProperty rdf:about="&sm;email">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#f2f_meeting -->
+
+    <owl:DatatypeProperty rdf:about="&sm;f2f_meeting">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">absent</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">present</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#fonts -->
+
+    <owl:DatatypeProperty rdf:about="&sm;fonts">
+        <rdfs:domain rdf:resource="&sm;Aesthetics"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#gender -->
+
+    <owl:DatatypeProperty rdf:about="&sm;gender">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>female</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>male</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#goals_description -->
+
+    <owl:DatatypeProperty rdf:about="&sm;goals_description">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#home_address -->
+
+    <owl:DatatypeProperty rdf:about="&sm;home_address">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#interests -->
+
+    <owl:DatatypeProperty rdf:about="&sm;interests">
+        <rdfs:domain rdf:resource="&sm;Interests"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#language_choice -->
+
+    <owl:DatatypeProperty rdf:about="&sm;language_choice">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&sm;LanguagePreferred"/>
+                    <rdf:Description rdf:about="&sm;LanguageSpoken"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">el</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">en</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">es</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;string">fr</rdf:first>
+                                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#lastname -->
+
+    <owl:DatatypeProperty rdf:about="&sm;lastname">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#learning_style_value -->
+
+    <owl:DatatypeProperty rdf:about="&sm;learning_style_value">
+        <rdfs:domain rdf:resource="&sm;LearningStyle"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#mark -->
+
+    <owl:DatatypeProperty rdf:about="&sm;mark">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;integer">0</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;integer">1</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;integer">10</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                <rdf:first rdf:datatype="&xsd;integer">2</rdf:first>
+                                                <rdf:rest>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                        <rdf:first rdf:datatype="&xsd;integer">3</rdf:first>
+                                                        <rdf:rest>
+                                                            <rdf:Description>
+                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                <rdf:first rdf:datatype="&xsd;integer">4</rdf:first>
+                                                                <rdf:rest>
+                                                                    <rdf:Description>
+                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                        <rdf:first rdf:datatype="&xsd;integer">5</rdf:first>
+                                                                        <rdf:rest>
+                                                                            <rdf:Description>
+                                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                                <rdf:first rdf:datatype="&xsd;integer">6</rdf:first>
+                                                                                <rdf:rest>
+                                                                                    <rdf:Description>
+                                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                                        <rdf:first rdf:datatype="&xsd;integer">7</rdf:first>
+                                                                                        <rdf:rest>
+                                                                                            <rdf:Description>
+                                                                                                <rdf:type rdf:resource="&rdf;List"/>
+                                                                                                <rdf:first rdf:datatype="&xsd;integer">8</rdf:first>
+                                                                                                <rdf:rest>
+                                                                                                    <rdf:Description>
+                                                                                                        <rdf:type rdf:resource="&rdf;List"/>
+                                                                                                        <rdf:first rdf:datatype="&xsd;integer">9</rdf:first>
+                                                                                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                                                                                    </rdf:Description>
+                                                                                                </rdf:rest>
+                                                                                            </rdf:Description>
+                                                                                        </rdf:rest>
+                                                                                    </rdf:Description>
+                                                                                </rdf:rest>
+                                                                            </rdf:Description>
+                                                                        </rdf:rest>
+                                                                    </rdf:Description>
+                                                                </rdf:rest>
+                                                            </rdf:Description>
+                                                        </rdf:rest>
+                                                    </rdf:Description>
+                                                </rdf:rest>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="&sm;name">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#password -->
+
+    <owl:DatatypeProperty rdf:about="&sm;password">
+        <rdfs:subPropertyOf rdf:resource="&sm;security_key"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#phone_number -->
+
+    <owl:DatatypeProperty rdf:about="&sm;phone_number">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#previous_experience -->
+
+    <owl:DatatypeProperty rdf:about="&sm;previous_experience">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">advanced</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">beginner</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first rdf:datatype="&xsd;string">novice</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#reasons_for_education -->
+
+    <owl:DatatypeProperty rdf:about="&sm;reasons_for_education">
+        <rdfs:domain rdf:resource="&sm;ReasonsForEducation"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>career development</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>change career</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>general knowledge</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#security_code -->
+
+    <owl:DatatypeProperty rdf:about="&sm;security_code">
+        <rdfs:subPropertyOf rdf:resource="&sm;security_key"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#security_key -->
+
+    <owl:DatatypeProperty rdf:about="&sm;security_key">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#social_solitary_value -->
+
+    <owl:DatatypeProperty rdf:about="&sm;social_solitary_value">
+        <rdfs:domain rdf:resource="&sm;SocialSolitary"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#socialization_style -->
+
+    <owl:DatatypeProperty rdf:about="&sm;socialization_style">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">atomic</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">collaborative</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#time_for_study -->
+
+    <owl:DatatypeProperty rdf:about="&sm;time_for_study">
+        <rdfs:domain rdf:resource="&sm;TimeStudy"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first>little</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first>much</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&rdf;List"/>
+                                        <rdf:first>no time</rdf:first>
+                                        <rdf:rest rdf:resource="&rdf;nil"/>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#use_of_technology -->
+
+    <owl:DatatypeProperty rdf:about="&sm;use_of_technology">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&rdf;List"/>
+                        <rdf:first rdf:datatype="&xsd;string">adaptable</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&rdf;List"/>
+                                <rdf:first rdf:datatype="&xsd;string">adaptive</rdf:first>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#work_experience -->
+
+    <owl:DatatypeProperty rdf:about="&sm;work_experience">
+        <rdfs:domain rdf:resource="&sm;DemographicData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/LearningObject.owl#LearningObject -->
+
+    <owl:Class rdf:about="&LearningObject;LearningObject"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/LearningOutcome.owl#LearningOutcome -->
+
+    <owl:Class rdf:about="&LearningOutcome;LearningOutcome"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#AcademicLiteracy -->
+
+    <owl:Class rdf:about="&sm;AcademicLiteracy">
+        <rdfs:subClassOf rdf:resource="&sm;MotivationState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Accessibility -->
+
+    <owl:Class rdf:about="&sm;Accessibility">
+        <rdfs:subClassOf rdf:resource="&sm;StudentPersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Aesthetics -->
+
+    <owl:Class rdf:about="&sm;Aesthetics">
+        <rdfs:subClassOf rdf:resource="&sm;InteractionPreferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Aural -->
+
+    <owl:Class rdf:about="&sm;Aural">
+        <rdfs:subClassOf rdf:resource="&sm;VARK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Color -->
+
+    <owl:Class rdf:about="&sm;Color">
+        <rdfs:subClassOf rdf:resource="&sm;Aesthetics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#DemographicData -->
+
+    <owl:Class rdf:about="&sm;DemographicData">
+        <rdfs:subClassOf rdf:resource="&sm;StudentPersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Disabilities -->
+
+    <owl:Class rdf:about="&sm;Disabilities">
+        <rdfs:subClassOf rdf:resource="&sm;Accessibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#FelderSilverman -->
+
+    <owl:Class rdf:about="&sm;FelderSilverman">
+        <rdfs:subClassOf rdf:resource="&sm;LearningStyle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Fonts -->
+
+    <owl:Class rdf:about="&sm;Fonts">
+        <rdfs:subClassOf rdf:resource="&sm;Aesthetics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#InteractionPreferences -->
+
+    <owl:Class rdf:about="&sm;InteractionPreferences">
+        <rdfs:subClassOf rdf:resource="&sm;Accessibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Interests -->
+
+    <owl:Class rdf:about="&sm;Interests">
+        <rdfs:label xml:lang="el">Ενδιαφέροντα</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sm;MotivationState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Kinesthetic -->
+
+    <owl:Class rdf:about="&sm;Kinesthetic">
+        <rdfs:subClassOf rdf:resource="&sm;VARK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Language -->
+
+    <owl:Class rdf:about="&sm;Language">
+        <rdfs:subClassOf rdf:resource="&sm;InteractionPreferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LanguagePreferred -->
+
+    <owl:Class rdf:about="&sm;LanguagePreferred">
+        <rdfs:subClassOf rdf:resource="&sm;Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LanguageSpoken -->
+
+    <owl:Class rdf:about="&sm;LanguageSpoken">
+        <rdfs:subClassOf rdf:resource="&sm;Language"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LearningGoals -->
+
+    <owl:Class rdf:about="&sm;LearningGoals">
+        <rdfs:subClassOf rdf:resource="&sm;MotivationState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#LearningStyle -->
+
+    <owl:Class rdf:about="&sm;LearningStyle">
+        <rdfs:label xml:lang="el">ΜαθησιακόΣτυλ</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sm;Accessibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#MediaPresentation -->
+
+    <owl:Class rdf:about="&sm;MediaPresentation">
+        <rdfs:subClassOf rdf:resource="&sm;InteractionPreferences"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#MotivationState -->
+
+    <owl:Class rdf:about="&sm;MotivationState">
+        <rdfs:subClassOf rdf:resource="&sm;StudentPersonalInformation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#ReadWrite -->
+
+    <owl:Class rdf:about="&sm;ReadWrite">
+        <rdfs:subClassOf rdf:resource="&sm;VARK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#ReasonsForEducation -->
+
+    <owl:Class rdf:about="&sm;ReasonsForEducation">
+        <rdfs:subClassOf rdf:resource="&sm;MotivationState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Social -->
+
+    <owl:Class rdf:about="&sm;Social">
+        <rdfs:subClassOf rdf:resource="&sm;SocialSolitary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#SocialSolitary -->
+
+    <owl:Class rdf:about="&sm;SocialSolitary">
+        <rdfs:subClassOf rdf:resource="&sm;LearningStyle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Solitary -->
+
+    <owl:Class rdf:about="&sm;Solitary">
+        <rdfs:subClassOf rdf:resource="&sm;SocialSolitary"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Student -->
+
+    <owl:Class rdf:about="&sm;Student">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#StudentPersonalInformation -->
+
+    <owl:Class rdf:about="&sm;StudentPersonalInformation"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#TimeStudy -->
+
+    <owl:Class rdf:about="&sm;TimeStudy">
+        <rdfs:label xml:lang="el">ΧρόνοςΜελέτης</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sm;MotivationState"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#VARK -->
+
+    <owl:Class rdf:about="&sm;VARK">
+        <rdfs:subClassOf rdf:resource="&sm;LearningStyle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#Visual -->
+
+    <owl:Class rdf:about="&sm;Visual">
+        <rdfs:subClassOf rdf:resource="&sm;VARK"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_Course -->
+
+    <owl:Class rdf:about="&sm;_Course"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_LORecord -->
+
+    <owl:Class rdf:about="&sm;_LORecord">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_LORec2Course"/>
+                        <owl:onClass rdf:resource="&sm;_Course"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_LORec2LO_"/>
+                        <owl:onClass rdf:resource="&LearningOutcome;LearningOutcome"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_LORec2Student_"/>
+                        <owl:onClass rdf:resource="&sm;Student"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>A record for the relation between the user and a particular Learning Outcome
+
+It must be linked with exacly 1 user and 1 LOutcome
+
+data properties contain:
+date of last access 
+state {finished, exausted, parsed,...?}
+value (score?) &lt;--isws na orizetai k i metriki edw</rdfs:comment>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>to do: Mh xrisimopoiw ta &quot;exacly&quot; ka8ws paizoun swsta mono efoson dilw8oun ola ta individuals san ... ksexwrista metaxu tous.... todo na rwtisw giati
+
+episis, dimiourgountai perierges susxetiseis, px an valeis 1 individual me auti ti sxesi xwris na anikei stin klasi, 8a eksiswsei tis klasseis! genika ginontai satanika pramata</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sm;_LORecord"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_LORec2Course"/>
+                        <owl:onClass rdf:resource="&sm;_Course"/>
+                        <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_LORec2LO_"/>
+                        <owl:onClass rdf:resource="&LearningOutcome;LearningOutcome"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_LORec2Student_"/>
+                        <owl:onClass rdf:resource="&sm;Student"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_LearningTrack -->
+
+    <owl:Class rdf:about="&sm;_LearningTrack">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_record2Lobj_"/>
+                        <owl:onClass rdf:resource="&LearningObject;LearningObject"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_record2course_"/>
+                        <owl:onClass rdf:resource="&sm;_Course"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_record2student_"/>
+                        <owl:onClass rdf:resource="&sm;Student"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment>Low level tracking during the learning proccedure: 
+
+It must connect to a course AND a student AND an LOrecord
+
+data properties contain: 
+date of access
+path identifier (int)
+result values (if any)?</rdfs:comment>
+    </owl:Class>
+    <owl:Axiom>
+        <rdfs:comment>to idio k edw: allaxe ta</rdfs:comment>
+        <owl:annotatedSource rdf:resource="&sm;_LearningTrack"/>
+        <owl:annotatedProperty rdf:resource="&rdfs;subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_record2Lobj_"/>
+                        <owl:onClass rdf:resource="&LearningObject;LearningObject"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_record2course_"/>
+                        <owl:onClass rdf:resource="&sm;_Course"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sm;_record2student_"/>
+                        <owl:onClass rdf:resource="&sm;Student"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:annotatedTarget>
+    </owl:Axiom>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#_StudentLMap -->
+
+    <owl:Class rdf:about="&sm;_StudentLMap"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/General.owl#MA_PLH10_GP4_16 -->
+
+    <owl:NamedIndividual rdf:about="&General;MA_PLH10_GP4_16"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/General.owl#PA_PLH10_GP4_14 -->
+
+    <owl:NamedIndividual rdf:about="&General;PA_PLH10_GP4_14"/>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#plh10 -->
+
+    <owl:NamedIndividual rdf:about="&sm;plh10">
+        <rdf:type rdf:resource="&sm;_Course"/>
+        <_course_title>πλη δέκα</_course_title>
+        <_has_temp_goals>PA_PLI10_GA4_12_</_has_temp_goals>
+        <_has_temp_goals>PA_PLI10_GA4_14_</_has_temp_goals>
+        <_courseID>PLH10</_courseID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#plh24 -->
+
+    <owl:NamedIndividual rdf:about="&sm;plh24">
+        <rdf:type rdf:resource="&sm;_Course"/>
+        <_courseID>PLH24</_courseID>
+        <_has_temp_goals>PA_PLH24_E2_30</_has_temp_goals>
+        <_course_title>πλη είκοσι τέσσερω</_course_title>
+        <_has_temp_goals>PA_PLH24_E2_32</_has_temp_goals>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#reason1 -->
+
+    <owl:NamedIndividual rdf:about="&sm;reason1">
+        <rdf:type rdf:resource="&sm;ReasonsForEducation"/>
+        <reasons_for_education>general knowledge</reasons_for_education>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#reason2 -->
+
+    <owl:NamedIndividual rdf:about="&sm;reason2">
+        <rdf:type rdf:resource="&sm;ReasonsForEducation"/>
+        <reasons_for_education>change career</reasons_for_education>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student1 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student1">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st1</_mod_userKey>
+        <_mod_UID>01</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student10 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student10">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st10</_mod_userKey>
+        <_mod_UID>10</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student11 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student11">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>11</_mod_UID>
+        <_mod_userKey>st11</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student12 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student12">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>12</_mod_UID>
+        <_mod_userKey>st12</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student13 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student13">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>13</_mod_UID>
+        <_mod_userKey>st13</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student14 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student14">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>14</_mod_UID>
+        <_mod_userKey>st14</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student15 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student15">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st15</_mod_userKey>
+        <_mod_UID>15</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student16 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student16">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st16</_mod_userKey>
+        <_mod_UID>16</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student17 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student17">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>17</_mod_UID>
+        <_mod_userKey>st17</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student18 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student18">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>18</_mod_UID>
+        <_mod_userKey>st18</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student19 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student19">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st19</_mod_userKey>
+        <_mod_UID>19</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student2 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student2">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>02</_mod_UID>
+        <_mod_userKey>st2</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student20 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student20">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st20</_mod_userKey>
+        <_mod_UID>20</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student3 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student3">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>03</_mod_UID>
+        <_mod_userKey>st3</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student4 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student4">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>04</_mod_UID>
+        <_mod_userKey>st4</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student5 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student5">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st5</_mod_userKey>
+        <_mod_UID>05</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student6 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student6">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>06</_mod_UID>
+        <_mod_userKey>st6</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student7 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student7">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_userKey>st7</_mod_userKey>
+        <_mod_UID>07</_mod_UID>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student8 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student8">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>08</_mod_UID>
+        <_mod_userKey>st8</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#student9 -->
+
+    <owl:NamedIndividual rdf:about="&sm;student9">
+        <rdf:type rdf:resource="&sm;Student"/>
+        <_mod_UID>09</_mod_UID>
+        <_mod_userKey>st9</_mod_userKey>
+        <_attending_course rdf:resource="&sm;plh10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#time1 -->
+
+    <owl:NamedIndividual rdf:about="&sm;time1">
+        <rdf:type rdf:resource="&sm;TimeStudy"/>
+        <time_for_study>no time</time_for_study>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#time2 -->
+
+    <owl:NamedIndividual rdf:about="&sm;time2">
+        <rdf:type rdf:resource="&sm;TimeStudy"/>
+        <time_for_study>little</time_for_study>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://eeyem.eap.gr/ontologies/2011/Student_Model_updated.owl#time3 -->
+
+    <owl:NamedIndividual rdf:about="&sm;time3">
+        <rdf:type rdf:resource="&sm;TimeStudy"/>
+        <time_for_study>much</time_for_study>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
